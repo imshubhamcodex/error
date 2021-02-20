@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Bill Calculator
+    </title>
+    <link rel="stylesheet" href="billcalc.css">
+</head>
+
+<body>
+    <h1>Bill Calculator</h1>
+    <form onsubmit="return calculateTotalPrice();">
+        <table>
+            <tr>
+                <td>
+                    <label for="productName">Product Name</label>
+                </td>
+                <td>
+                    <input id="productName" placeholder="Product Name" type="text" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Product Price in Rs.</label>
+                </td>
+                <td>
+                    <input id="price" placeholder="Product Price" type="number" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Quantity</label>
+                </td>
+                <td>
+                    <input id="qty" placeholder="Enter quantity" min="1" type="number" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Total Price in Rs.</label>
+                </td>
+                <td>
+                    <output id="totalprice"  for="price qty" ></output>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit" id="submit">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function calculateTotalPrice() {
+            var price = document.getElementById('price').value;
+            var qty = document.getElementById('qty').value;
+    
+            document.getElementById('totalprice').value = Number(price) * Number(qty);
+            // document.getElementById('totalprice').textContent = parseInt(price) * parseInt(qty);
+    
+            return false;
+        }
+    </script>
+</body>
+</html>
